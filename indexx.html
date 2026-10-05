@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Alchemy</title>
+<meta property="og:title" content="Meta Alchemy">
+<style>
+:root{--bg:#0d0b12;--fg:#e9e4f0;--dim:#8d85a0;--accent:#c9a96e;--line:#2a2535}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f2ea;--fg:#241f2e;--dim:#8a8095;--accent:#8a6a2f;--line:#ddd5c6}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;padding:min(12vh,96px) 24px}
+ol{list-style:none;margin:0 auto;padding:0;max-width:640px}
+li{border-bottom:1px solid var(--line)}
+li:first-child{border-top:1px solid var(--line)}
+a{display:flex;align-items:baseline;gap:18px;padding:18px 4px;color:var(--fg);text-decoration:none;font-size:clamp(22px,4vw,28px);line-height:1.25;transition:color .2s,padding-left .2s}
+a:hover,a:focus-visible{color:var(--accent);padding-left:12px;outline:none}
+a span:first-child{font:11px/1 ui-monospace,"SF Mono",Menlo,Consolas,monospace;letter-spacing:.15em;color:var(--dim);flex:none}
+</style>
+</head>
+<body>
+<ol id="list"></ol>
+<script>
+var pages = [
+  ["zhertva", "Программа Жертвы"],
+  ["vnutrenniy-rebenok", "Внутренний ребёнок"],
+  ["strah-poteri", "Страх потери и отвержения"],
+  ["strah-boli", "Страх боли"],
+  ["horoshaya-devochka", "Программа хорошей девочки"],
+  ["chakra-guide", "Конкуренция по чакрам"],
+  ["kontrol-guide", "Программа контроля"],
+  ["avatar-muzhchina", "Красный Дракон · Аватар Мужчина"],
+  ["karta-soprovozhdeniya", "Карта сопровождения"],
+  ["zhivoe-pole-lyubvi", "Живое поле любви · Гайд проводника по контенту и сопровождению"],
+  ["anastasia-torshukova", "Анастасия Торшукова — консультации с психологом онлайн"],
+  ["konkurenciya", "Конкуренция · гайд"],
+  ["zhivoe-pole", "Живое поле любви · Как всё устроено"],
+  ["praktika-proyavlenie", "Где я теряю себя в проявлении · письменная практика"],
+  ["postav-sebya-na-kartu", "Поставь себя на карту"]
+];
+var list = document.getElementById("list");
+pages.forEach(function(p, i){
+  var li = document.createElement("li"), a = document.createElement("a");
+  a.href = p[0] + "/";
+  var n = document.createElement("span"); n.textContent = String(i + 1).padStart(2, "0");
+  var t = document.createElement("span"); t.textContent = p[1];
+  a.append(n, t); li.append(a); list.append(li);
+});
+</script>
+</body>
+</html>
